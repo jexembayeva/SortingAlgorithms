@@ -7,60 +7,77 @@ namespace SortingAlgorithms
     {
         static void Main(string[] args)
         {
+            var pathRandom = @"C:\Users\Gaukhar\Downloads\sorting_tests-19350-c7b0c3\sorting-tests\0.random";
+            var pathDigits = @"C:\Users\Gaukhar\Downloads\sorting_tests-19350-c7b0c3\sorting-tests\1.digits";
+            var pathSorted = @"C:\Users\Gaukhar\Downloads\sorting_tests-19350-c7b0c3\sorting-tests\2.sorted";
+            var pathRevers = @"C:\Users\Gaukhar\Downloads\sorting_tests-19350-c7b0c3\sorting-tests\3.revers";
+
             Console.WriteLine("############################## ShellSortTask ################################");
             var shellSortTask = new ShellSortTask<int>();
 
-            Tester shellSortTester = new(shellSortTask);
             Console.WriteLine("----------------------------------Random----------------------------------");
-            shellSortTester.RunTests(TestType.Random);
+            Tester shellSortRandomTester = new(shellSortTask, pathRandom);
+            shellSortRandomTester.RunTests();
             Console.WriteLine("----------------------------------Digits----------------------------------");
-            shellSortTester.RunTests(TestType.Digits);
+            Tester shellSortDigitsTester = new(shellSortTask, pathDigits);
+            shellSortDigitsTester.RunTests();
             Console.WriteLine("----------------------------------Sorted----------------------------------");
-            shellSortTester.RunTests(TestType.Sorted);
+            Tester shellSortSortedTester = new(shellSortTask, pathSorted);
+            shellSortSortedTester.RunTests();
             Console.WriteLine("----------------------------------Reverse----------------------------------");
-            shellSortTester.RunTests(TestType.Reversed);
+            Tester shellSortReverseTester = new(shellSortTask, pathRevers);
+            shellSortReverseTester.RunTests();
             Console.WriteLine();
 
             Console.WriteLine("############################## HeapSort ################################");
             var heapSortTask = new HeapSortTask<int>();
 
-            Tester heapSortTester = new(heapSortTask);
             Console.WriteLine("----------------------------------Random----------------------------------");
-            heapSortTester.RunTests(TestType.Random);
+            Tester heapSortRandomTester = new(heapSortTask, pathRandom);
+            heapSortRandomTester.RunTests();
             Console.WriteLine("----------------------------------Digits----------------------------------");
-            heapSortTester.RunTests(TestType.Digits);
+            Tester heapSortDigitsTester = new(heapSortTask, pathDigits);
+            heapSortDigitsTester.RunTests();
             Console.WriteLine("----------------------------------Sorted----------------------------------");
-            heapSortTester.RunTests(TestType.Sorted);
+            Tester heapSortSortedTester = new(heapSortTask, pathSorted);
+            heapSortSortedTester.RunTests();
             Console.WriteLine("----------------------------------Reverse----------------------------------");
-            heapSortTester.RunTests(TestType.Reversed);
+            Tester heapSortReverseTester = new(heapSortTask, pathRevers);
+            heapSortReverseTester.RunTests();
             Console.WriteLine();
 
             Console.WriteLine("############################ InsertionSort ###############################");
-            var insertionSortTask = new InsertionSortTask<int>();
+             var insertionSortTask = new InsertionSortTask<int>();
 
-            Tester insertionSortTester = new(insertionSortTask);
-            Console.WriteLine("----------------------------------Random----------------------------------");
-            insertionSortTester.RunTests(TestType.Random);
+             Console.WriteLine("----------------------------------Random----------------------------------");
+            Tester insertionSortRandomTester = new(insertionSortTask, pathRandom);
+            insertionSortRandomTester.RunTests();
+             Console.WriteLine("----------------------------------Digits----------------------------------");
+            Tester insertionDigitsSortTester = new(insertionSortTask, pathRandom);
+            insertionDigitsSortTester.RunTests();
+             Console.WriteLine("----------------------------------Sorted----------------------------------");
+            Tester insertionSortedSortTester = new(insertionSortTask, pathRandom);
+            insertionSortedSortTester.RunTests();
+             Console.WriteLine("----------------------------------Reverse----------------------------------");
+            Tester insertionReverseSortTester = new(insertionSortTask, pathRandom);
+            insertionReverseSortTester.RunTests();
+             Console.WriteLine();
+
+             Console.WriteLine("############################## BubbleSort ################################");
+             var bubbleSortTask = new BubbleSortTask<int>();
+
+             Console.WriteLine("----------------------------------Random----------------------------------");
+            Tester bubbleSortRandomTester = new(insertionSortTask, pathRandom);
+            bubbleSortRandomTester.RunTests();
             Console.WriteLine("----------------------------------Digits----------------------------------");
-            insertionSortTester.RunTests(TestType.Digits);
+            Tester bubbleDigitsSortTester = new(insertionSortTask, pathRandom);
+            bubbleDigitsSortTester.RunTests();
             Console.WriteLine("----------------------------------Sorted----------------------------------");
-            insertionSortTester.RunTests(TestType.Sorted);
+            Tester bubbleSortedSortTester = new(insertionSortTask, pathRandom);
+            bubbleSortedSortTester.RunTests();
             Console.WriteLine("----------------------------------Reverse----------------------------------");
-            insertionSortTester.RunTests(TestType.Reversed);
-            Console.WriteLine();
-
-            Console.WriteLine("############################## BubbleSort ################################");
-            var bubbleSortTask = new BubbleSortTask<int>();
-
-            Tester bubbleSortTester = new(bubbleSortTask);
-            Console.WriteLine("----------------------------------Random----------------------------------");
-            bubbleSortTester.RunTests(TestType.Random);
-            Console.WriteLine("----------------------------------Digits----------------------------------");
-            bubbleSortTester.RunTests(TestType.Digits);
-            Console.WriteLine("----------------------------------Sorted----------------------------------");
-            bubbleSortTester.RunTests(TestType.Sorted);
-            Console.WriteLine("----------------------------------Reverse----------------------------------");
-            bubbleSortTester.RunTests(TestType.Reversed);
+            Tester bubbleReverseSortTester = new(insertionSortTask, pathRandom);
+            bubbleReverseSortTester.RunTests();
             Console.WriteLine();
 
         }

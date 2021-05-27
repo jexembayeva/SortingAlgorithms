@@ -6,10 +6,10 @@ namespace SortingAlgorithms
     public class AlgorithmBase<T>
         where T : IComparable
     {
-        public List<T> Items { get; set; } = new List<T>();
+        public T[] Items { get; set; }
         protected void Swap(int positionA, int positionB)
         {
-            if (positionA < Items.Count && positionB < Items.Count)
+            if (positionA < Items.Length && positionB < Items.Length)
             {
                 var temp = Items[positionA];
                 Items[positionA] = Items[positionB];
@@ -19,7 +19,6 @@ namespace SortingAlgorithms
 
         public virtual void Sort()
         {
-            Items.Sort();
         }
     }
 }

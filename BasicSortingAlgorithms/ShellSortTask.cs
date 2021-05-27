@@ -6,10 +6,10 @@ namespace SortingAlgorithms
     {
         public override void Sort()
         {
-            var step = Items.Count / 2;
+            var step = Items.Length / 2;
             while (step > 0)
             {
-                for (int i = step; i < Items.Count; i++)
+                for (int i = step; i < Items.Length; i++)
                 {
                     int j = i;
                     while ((j >= step) && Items[j - step].CompareTo(Items[j]) == 1)
@@ -27,9 +27,9 @@ namespace SortingAlgorithms
         {
             int k = 1;
             var step = 1;
-            while (step < (Items.Count / 3))
+            while (step < (Items.Length / 3))
             {
-                for (int i = step; i < Items.Count; i++)
+                for (int i = step; i < Items.Length; i++)
                 {
                     int j = i;
                     while ((j >= step) && Items[j - step].CompareTo(Items[j]) == 1)

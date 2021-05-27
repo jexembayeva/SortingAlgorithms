@@ -6,11 +6,11 @@ namespace SortingAlgorithms
     {
         public override void Sort()
         {
-            for (int root = Items.Count / 2 - 1; root >= 0; root--)
+            for (int root = Items.Length / 2 - 1; root >= 0; root--)
             {
-                MoveMaxToRoot(root, Items.Count);
+                MoveMaxToRoot(root, Items.Length);
             }
-            for (int j = Items.Count - 1; j >= 0; j--)
+            for (int j = Items.Length - 1; j >= 0; j--)
             {
                 Swap(0, j);
                 MoveMaxToRoot(0, j);

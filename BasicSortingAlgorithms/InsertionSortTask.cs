@@ -6,7 +6,7 @@ namespace SortingAlgorithms
     {
         public override void Sort()
         {
-            for (int i = 1; i < Items.Count; i++)
+            for (int i = 1; i < Items.Length; i++)
             {
                 var temp = Items[i];
                 var j = i;
