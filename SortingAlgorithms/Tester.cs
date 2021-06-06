@@ -8,8 +8,8 @@ namespace SortingAlgorithmsTest
 {
     public class Tester
     {
-        private AlgorithmBase<int> _task;
-        private string _path;
+        private readonly AlgorithmBase<int> _task;
+        private readonly string _path;
 
         public Tester(AlgorithmBase<int> task, string path)
         {
@@ -19,11 +19,11 @@ namespace SortingAlgorithmsTest
 
         public void RunTests()
         {
-            int nr = 0;
+            var nr = 0;
             while (true)
             {
-                string inFile = $"{_path}\\test.{nr}.in";
-                string outFile = $"{_path}\\test.{nr}.out";
+                var inFile = $"{_path}/test.{nr}.in";
+                var outFile = $"{_path}/test.{nr}.out";
 
                 if (!File.Exists(inFile) || !File.Exists(outFile))
                 {
@@ -32,7 +32,7 @@ namespace SortingAlgorithmsTest
 
                 var sw = new Stopwatch();
                 sw.Start();
-                bool result = RunTest(inFile, outFile);
+                var result = RunTest(inFile, outFile);
                 sw.Stop();
 
                 Console.WriteLine($"Test #{nr} - " + result + " " + sw.ElapsedMilliseconds + "ms");
@@ -44,11 +44,11 @@ namespace SortingAlgorithmsTest
         {
             try
             {
-                string[] data = File.ReadAllLines(inFile);
-                string expect = File.ReadAllText(outFile).Trim();
+                var data = File.ReadAllLines(inFile);
+                var expect = File.ReadAllText(outFile).Trim();
                 _task.Items = Array.ConvertAll(data[1].Split(' ', ','), s => int.Parse(s));
                 _task.Sort();
-                string actual = string.Join(" ", _task.Items);
+                var actual = string.Join(" ", _task.Items);
 
                 return actual == expect;
             }

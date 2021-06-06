@@ -1,17 +1,18 @@
-﻿using SortingAlgorithmsTest;
-using System;
+﻿using System;
+using System.IO;
+using SortingAlgorithms;
 
-namespace SortingAlgorithms
+namespace SortingAlgorithmsTest
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var pathRandom = @"C:\Users\Gaukhar\Downloads\sorting_tests-19350-c7b0c3\sorting-tests\0.random";
-            var pathDigits = @"C:\Users\Gaukhar\Downloads\sorting_tests-19350-c7b0c3\sorting-tests\1.digits";
-            var pathSorted = @"C:\Users\Gaukhar\Downloads\sorting_tests-19350-c7b0c3\sorting-tests\2.sorted";
-            var pathRevers = @"C:\Users\Gaukhar\Downloads\sorting_tests-19350-c7b0c3\sorting-tests\3.revers";
-
+            var pathRandom = @"/Users/gaukharjexembayeva/source/repos/Algorithms/07. Сортировка/sorting-tests/0.random";
+            var pathDigits = @"/Users/gaukharjexembayeva/source/repos/Algorithms/07. Сортировка/sorting-tests/1.digits";
+            var pathSorted = @"/Users/gaukharjexembayeva/source/repos/Algorithms/07. Сортировка/sorting-tests/2.sorted";
+            var pathRevers = @"/Users/gaukharjexembayeva/source/repos/Algorithms/07. Сортировка/sorting-tests/3.revers";
+ 
             Console.WriteLine("############################## ShellSortTask ################################");
             var shellSortTask = new ShellSortTask<int>();
 
