@@ -1,6 +1,6 @@
 
 <div align="center">
-    <div>List</div>
+    <b>List</b>
 <table>
     <thead>
         <tr>
