@@ -1,6 +1,5 @@
 ﻿using SortingAlgorithms;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 
@@ -8,10 +7,10 @@ namespace SortingAlgorithmsTest
 {
     public class Tester
     {
-        private readonly AlgorithmBase<int> _task;
+        private readonly AlgorithmBase _task;
         private readonly string _path;
 
-        public Tester(AlgorithmBase<int> task, string path)
+        public Tester(AlgorithmBase task, string path)
         {
             _task = task;
             _path = path;
@@ -22,8 +21,8 @@ namespace SortingAlgorithmsTest
             var nr = 0;
             while (true)
             {
-                var inFile = $"{_path}/test.{nr}.in";
-                var outFile = $"{_path}/test.{nr}.out";
+                var inFile = $"{_path}\\test.{nr}.in";
+                var outFile = $"{_path}\\test.{nr}.out";
 
                 if (!File.Exists(inFile) || !File.Exists(outFile))
                 {
@@ -46,9 +45,7 @@ namespace SortingAlgorithmsTest
             {
                 var data = File.ReadAllLines(inFile);
                 var expect = File.ReadAllText(outFile).Trim();
-                _task.Items = Array.ConvertAll(data[1].Split(' ', ','), s => int.Parse(s));
-                _task.Sort();
-                var actual = string.Join(" ", _task.Items);
+                var actual = string.Join(" ", _task.Sort(Array.ConvertAll(data[1].Split(' ', ','), s => int.Parse(s))));
 
                 return actual == expect;
             }
